@@ -2,8 +2,9 @@
     width: 300px;
 }
 
-body{
-    
+#body { 
+    margin: 0; 
+    padding: 0; 
 }
 
 #mapid{
@@ -12,4 +13,6 @@ body{
    bottom: 0;
    width:100%;
 }
+
+
 
