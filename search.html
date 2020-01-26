@@ -22,7 +22,7 @@
 </head>
 <body>
 
-    <!-- Search bar -->
+    <!-- Search bar
   <div class="container mt-3">
       <nav class="navbar navbar-light bg-light">
           <form class="form-inline">
@@ -34,11 +34,25 @@
             </div>
           </form>
         </nav>
-  </div>
+  </div> -->
 
     <!-- Below div will contain class from mapwize/mapbox/leaflet.js/google-maps -->
-    <footer>
-      <div id="mapid" style="height:600px"></div>
+
+      <div id="mapid">
+         <!-- Search bar -->
+  <div class="container mt-3">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Search</span>
+            </div>
+            <input type="text" class="form-control" id="input" placeholder="Location" aria-label="Location" aria-describedby="basic-addon1">
+          </div>
+        </form>
+      </nav>
+</div>
+      </div>
     <script>
         var mymap = L.map('mapid').setView([28.678333, 77.261192], 100);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -62,7 +76,7 @@
     
     // mymap.on('click', onMapClick);
     </script>
-    </footer>
+
     
     
 
