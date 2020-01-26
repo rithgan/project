@@ -8,62 +8,55 @@
     <link rel="stylesheet" href="css/search.css">
     <!-- Mapbox -->
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
-    <!-- leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-    crossorigin=""></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
+    <!-- <style>
+      body { margin: 0; padding: 0; }
+      #map { position: absolute; top: 0; bottom: 0; width: 100%; height: 100%; }
+    </style> -->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Indoor Navigation App</title>
 </head>
 <body>
-
-    <!-- Search bar -->
+  
+    <!-- Search bar
   <div class="container mt-3">
-      <nav class="navbar navbar-light bg-light">
-          <form class="form-inline">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Search</span>
-              </div>
-              <input type="text" class="form-control" id="input" placeholder="Location" aria-label="Location" aria-describedby="basic-addon1">
+    <nav id="nav-visibility" class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Search</span>
             </div>
-          </form>
-        </nav>
-  </div>
-
-    <!-- Below div will contain class from mapwize/mapbox/leaflet.js/google-maps -->
-    <footer>
-      <div id="mapid" style="height:600px"></div>
-    <script>
-        var mymap = L.map('mapid').setView([28.678333, 77.261192], 100);
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        accessToken: 'pk.eyJ1IjoiZ29vZGZlZWwiLCJhIjoiY2s1dHA1Z2liMGpqZzNkb2d2OHJ4eXM5MSJ9.vLijYb7858NU_ZrsmGBGSg'
-        }).addTo(mymap);
-
-        var popup = L.popup();
-        var popup = L.popup();
-
-
-    // // This is important coz it will be used later in searching and all    
-    // function onMapClick(e) {
-    //     popup
-    //         .setLatLng(e.latlng)
-    //         .setContent("You clicked the map at " + e.latlng.toString())
-    //         .openOn(mymap);
-    // }
-    
-    // mymap.on('click', onMapClick);
-    </script>
-    </footer>
-    
+            <input type="text" class="form-control" id="input" placeholder="Location" aria-label="Location" aria-describedby="basic-addon1">
+          </div>
+        </form>
+      </nav>
+</div> -->
+<div id="map">
+   <!-- Search bar -->
+   <div class="container mt-3">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Search</span>
+            </div>
+            <input type="text" class="form-control" id="input" placeholder="Location" aria-label="Location" aria-describedby="basic-addon1">
+          </div>
+        </form>
+      </nav>
+</div>
+</div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZ29vZGZlZWwiLCJhIjoiY2s1dHA1Z2liMGpqZzNkb2d2OHJ4eXM5MSJ9.vLijYb7858NU_ZrsmGBGSg';
+var map = new mapboxgl.Map({
+container: 'map', // container id
+style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+center: [ 77.261105,28.678533], // starting position [lng, lat]
+zoom: 17 // starting zoom
+});
+</script>
     
 
     
