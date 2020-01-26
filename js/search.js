@@ -15,7 +15,7 @@ map.addControl(nav, 'bottom-right');
 
 
 
-//Location track - Problem - not really working
+//Location track - Problem - not really working - try on google chrome - i have firefox
 // map.addControl(
 
 //     new mapboxgl.GeolocateControl({
